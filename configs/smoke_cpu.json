@@ -1,0 +1,39 @@
+{
+  "data": {
+    "dataset": "cifar10",
+    "num_clients": 3,
+    "dirichlet_alpha": 10.0,
+    "public_ratio": 0.2,
+    "min_client_samples": 5,
+    "noise_levels": [
+      0.3,
+      0.6,
+      1.0
+    ]
+  },
+  "fedcorr": {
+    "iteration1": 2,
+    "local_ep": 1,
+    "local_bs": 8,
+    "beta": 0.0,
+    "mixup": false,
+    "lid_k": 5
+  },
+  "fedds": {
+    "rounds": 2,
+    "local_ep": 1,
+    "local_bs": 8,
+    "public_bs": 32,
+    "last_k": 2,
+    "frac": 1.0
+  },
+  "runtime": {
+    "device": "cpu",
+    "num_workers": 0,
+    "seed": 1,
+    "save_every": 0,
+    "synthetic": true,
+    "output_root": "outputs",
+    "exp_name": "smoke_cpu"
+  }
+}

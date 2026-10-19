@@ -1,0 +1,51 @@
+{
+  "data": {
+    "data_root": "/root/autodl-tmp/data",
+    "public_ratio": 0.1,
+    "split_seed": 42,
+    "noise_seed": 2026,
+    "dataset": "cifar100",
+    "num_clients": 100,
+    "dirichlet_alpha": 10.0
+  },
+  "model": {
+    "fedds_pretrained": false
+  },
+  "fedcorr": {
+    "local_ep": 5,
+    "local_bs": 100,
+    "lr": 0.03,
+    "momentum": 0.5,
+    "beta": 5.0,
+    "mixup": true,
+    "lid_k": 20,
+    "relabel_ratio": 0.5,
+    "confidence_thres": 0.5,
+    "train_transform": "train",
+    "loss_on": "logit",
+    "iteration1": 10
+  },
+  "fedds": {
+    "rounds": 200,
+    "frac": 0.1,
+    "local_bs": 64,
+    "lr": 0.01,
+    "momentum": 0.9,
+    "public_bs": 64,
+    "last_k": 10,
+    "ds_max_iter": 500,
+    "ds_tol": 1e-05,
+    "ds_use_class_prior": false,
+    "local_ep": 5
+  },
+  "runtime": {
+    "device": "cuda:0",
+    "num_workers": 2,
+    "seed": 1,
+    "save_every": 20,
+    "resume": true,
+    "reuse_correction": true,
+    "output_root": "outputs",
+    "exp_name": "cifar100_k100_a10_e5"
+  }
+}

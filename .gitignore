@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+
+# experiment artefacts: never commit data or results
+outputs/
+data/
+*.npz
+*.npy
+*.pt
+*.pth
+*.jsonl
+*.log
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# local caches
+.pytest_cache/
+.ipynb_checkpoints/
