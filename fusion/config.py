@@ -62,15 +62,15 @@ class ModelConfig:
 class FedCorrConfig:
     """Port of FedCorr's federated pre-processing stage."""
 
-    iteration1: int = 5
+    iteration1: int = 5  # number of iterations of FedCorr
     frac1: Optional[float] = None   # None -> 1 / num_clients
     local_ep: int = 5
-    local_bs: int = 100
+    local_bs: int = 100 #64,128
     lr: float = 0.03
     momentum: float = 0.5
     beta: float = 5.0               # proximal coefficient
     mixup: bool = True
-    mixup_alpha: float = 1.0
+    mixup_alpha: float = 1.0 # mixup parameter
     lid_k: int = 20
     relabel_ratio: float = 0.5
     confidence_thres: float = 0.5
@@ -89,7 +89,7 @@ class FedCorrConfig:
 class FedDSConfig:
     rounds: int = 200
     frac: float = 0.1               # paper: 10 of 100 clients per round
-    frac_by_num_clients: Dict[int, float] = field(default_factory=lambda: {10: 0.3})
+    frac_by_num_clients: Dict[int, float] = field(default_factory=lambda: {10: 0.1})
     local_ep: int = 5
     local_bs: int = 64
     lr: float = 0.01
